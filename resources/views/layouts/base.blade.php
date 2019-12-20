@@ -11,10 +11,10 @@
   <title>DIRI Manuscript Project</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ URL::asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="/css/small-business.css" rel="stylesheet">
+  <link href="{{ URL::asset('css/small-business.css') }}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -65,8 +65,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ URL::asset('js/jquery.min.js') }}" type="text/javascript"></script>
+  <script src="{{ URL::asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
 
 </body>
 
