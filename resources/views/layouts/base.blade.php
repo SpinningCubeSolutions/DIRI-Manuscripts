@@ -35,13 +35,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{{ route('manuscripts.create')}}">Add New Manuscript</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Search</a>
+            <a class="nav-link disabled" href="#">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link disabled" href="#">Contact</a>
           </li>
         </ul>
       </div>

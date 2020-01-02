@@ -24,7 +24,8 @@ class ManuscriptController extends Controller
      */
     public function create()
     {
-        //
+        return view('manuscripts.create')
+            ->with('manuscript', (new Manuscript()));
     }
 
     /**
@@ -35,7 +36,7 @@ class ManuscriptController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response("<h1> It works</h1> <script>alert('The store action was invoked')</script>");
     }
 
     /**

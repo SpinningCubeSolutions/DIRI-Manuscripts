@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('manuscripts', 'ManuscriptsController');
+Route::resource('manuscripts', 'ManuscriptController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
