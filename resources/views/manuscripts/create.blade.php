@@ -9,6 +9,7 @@
                 <button type="submit" class="btn btn-primary">Add Manuscript</button>
             </div>
         </div>
+        
     </form>
 @endsection
 
