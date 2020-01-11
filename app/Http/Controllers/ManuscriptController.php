@@ -71,7 +71,9 @@ class ManuscriptController extends Controller
             'images' => $formattedImageString,
             'user_id' => $user->id,
         ]);
-        return response()->json($manuscript);
+        $manuscriptImages = $this->createImageArray($formattedImageString);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
+
     }
 
     /**
@@ -82,7 +84,8 @@ class ManuscriptController extends Controller
      */
     public function show(Manuscript $manuscript)
     {
-        //
+        $manuscriptImages = $this->createImageArray($manuscript->images);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
     }
 
     /**
@@ -93,7 +96,7 @@ class ManuscriptController extends Controller
      */
     public function edit(Manuscript $manuscript)
     {
-        //
+        
     }
 
     /**
