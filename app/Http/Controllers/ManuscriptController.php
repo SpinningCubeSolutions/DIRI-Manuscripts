@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Manuscript;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class ManuscriptController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth')->only(['create', 'store','edit','update','destroy']);
+    }
+
 
     private function formatImageString(String $imageString) {
         $images = explode("\r\n", $imageString);
@@ -69,7 +74,7 @@ class ManuscriptController extends Controller
             'format' => $request->format,
             'binding' => $request->binding,
             'images' => $formattedImageString,
-            'user_id' => $user->id,
+            'user_id' => Auth::id,
         ]);
         $manuscriptImages = $this->createImageArray($formattedImageString);
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
