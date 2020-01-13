@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::resource('manuscripts', 'ManuscriptController');
 Auth::routes();
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
