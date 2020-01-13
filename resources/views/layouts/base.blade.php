@@ -34,15 +34,20 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('manuscripts.create')}}">Add New Manuscript</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{{ route('register')}}">Register</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{{ route('login')}}">Login</a>
-          </li>
+          @guest
+            <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+          @else
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('manuscripts.create')}}">Add New Manuscript</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link">Logout</a>
+              <form action="{{route('logout') }}" id="logout-form" method="POST"
+                style="display: none;">
+                 @csrf
+              </form>
+            </li>
+          @endguest
         </ul>
       </div>
     </div>
