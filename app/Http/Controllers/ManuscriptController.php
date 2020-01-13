@@ -55,6 +55,7 @@ class ManuscriptController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $users = DB::table('users')->get();
         $user = $users[0];
         $formattedImageString = $this->formatImageString($request->images);
@@ -74,6 +75,9 @@ class ManuscriptController extends Controller
         $manuscriptImages = $this->createImageArray($formattedImageString);
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
 
+=======
+        
+>>>>>>> 3750b21ea0980941fff7268cdd445f7c6091cb92
     }
 
     /**
