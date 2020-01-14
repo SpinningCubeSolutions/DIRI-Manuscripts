@@ -1,40 +1,64 @@
 @extends('layouts.base')
 
+@section('header')
+    <!-- Start: Page Banner -->
+    <section class="page-banner services-banner">
+        <div class="container">
+            <div class="banner-header">
+                <h2>Manuscript Listing</h2>
+                <span class="underline center"></span>
+            </div>
+        </div>
+    </section>
+    <!-- End: Page Banner -->
+@endsection
+
 @section('content')
-    <dl class="row">
-        <dt class="col-sm-3">Physical Location</dt>
-        <dd class="col-sm-9">{{ $manuscript->physical_location }}</dd>
+     <!-- Start: Products Section -->
+ <div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="booksmedia-detail-main">
+                <div class="container">
+                    <div class="text-center image-display">
+                        <div class="post-thumbnail">
+                            <img src="{{ $displayImage }}" width="500" alt="">
+                        </div>
+                    </div>
+                    <div class="booksmedia-detail-box">
+                        <div class="detailed-box">
+                            
+                            <div class="col-xs-12">
+                                <div class="post-center-content">
+                                    <p><strong>Physical Location:</strong> {{ $manuscript->physical_location }}</p>
+                                    <p><strong>Classmark</strong> {{ $manuscript->classmark }}</p>
+                                    <p><strong>Place of Origin:</strong> {{ $manuscript->place_of_origin }}</p>
+                                    <p><strong>Date of Creation:</strong> {{ date('F d, Y', strtotime($manuscript->date_of_creation)) }}</p>
+                                    <p><strong>Associated Persons:</strong> {{ $manuscript->associated_persons }}</p>
+                                    <p><strong>Material:</strong> {{ $manuscript->material }}</p>
+                                    <p><strong>Format:</strong> {{ $manuscript->format }}</p>
+                                    <p><strong>Binding:</strong> {{ $manuscript->binding }}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p><strong>Physical Description</strong> {{ $manuscript->physical_description }} </p>
 
-        <dt class="col-sm-3">Classmark</dt>
-        <dd class="col-sm-9">{{ $manuscript->classmark }}</dd>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+    
 
-        <dt class="col-sm-3">Place of Origin</dt>
-        <dd class="col-sm-9">{{ $manuscript->place_of_origin }}</dd>
-
-        <dt class="col-sm-3">Date of Creation</dt>
-        <dd class="col-sm-9">{{ date('F d, Y', strtotime($manuscript->date_of_creation)) }}</dd>
-
-        <dt class="col-sm-3">Associated Persons</dt>
-        <dd class="col-sm-9">{{ $manuscript->associated_persons }}</dd>
-
-        <dt class="col-sm-3">Physical Description</dt>
-        <dd class="col-sm-9">{{ $manuscript->physical_description }}</dd>
-
-        <dt class="col-sm-3">Material</dt>
-        <dd class="col-sm-9">{{ $manuscript->material }}</dd>
-
-        <dt class="col-sm-3">Format</dt>
-        <dd class="col-sm-9">{{ $manuscript->format }}</dd>
-
-        <dt class="col-sm-3">Binding</dt>
-        <dd class="col-sm-9">{{ $manuscript->binding }}</dd>
-    </dl>
-
-    <table>
+    {{-- <table>
         @foreach ($manuscriptImages as $image)
             <tr>
             <td><img src="{{ URL::asset($image) }}" width="300" ></td>
             </tr>
         @endforeach
-    </table>
-@endsection
+    </table> --}}
+@endsection 

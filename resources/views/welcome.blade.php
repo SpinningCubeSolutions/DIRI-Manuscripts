@@ -1,59 +1,40 @@
 @extends ('layouts.base')
 
+@section('header')
+    <!-- Start: Page Banner -->
+    <section class="page-banner services-banner">
+        <div class="container">
+            <div class="banner-header">
+                <h2>Welcome</h2>
+                <span class="underline center"></span>
+            </div>
+        </div>
+    </section>
+    <!-- End: Page Banner -->
+@endsection
+
 @section ('content')
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="/img/header.jpg" alt="">
-      </div>
-      <!-- /.col-lg-8 -->
-      <div class="col-lg-5">
-        <h1 class="font-weight-light">DIRI Manuscript Project</h1>
-        <p>The Dhammachai International Research Institute Manuscript Project aims to make ancient Buddhist manuscripts available to be viewed online for the first time. </p>
-      </div>
-      <!-- /.col-md-4 -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Call to Action Well -->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-      <div class="card-body">
-        <p class="text-white m-0">Namo Tassa Bhagavato Arahato Samma-Sambuddhassa</p>
-        <p class="text-white m-0">Please check back soon!</p>
-      </div>
-    </div>
-
-    <!-- Content Row -->
-    <div class="row">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Ancient Manuscripts</h2>
-            <p class="card-text">These manuscripts contain the words of the Lord Buddha.</p>
+<section class="who-we-are">
+  <div class="company-info">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-8 border">
+                  <div class="row">
+                      <div class="col-sm-11">
+                          <div class="company-detail">
+                              <h3 class="section-title">DIRI Manuscript Project</h3>
+                              <span class="underline left"></span>
+                              <p>The Dhammachai International Research Institute (DIRI) Manuscript Project aims to make ancient Buddhist manuscripts available to be viewed online for the first time.</p>
+                              <p>Some of these manuscripts are over 2,000 years old. Many are written in an ancient Indian language called Pali, which is related to Sanskrit. However, there is no standard script for Pali, so these manuscripts are written in a variety of scripts, including Gandhari, Thai and Khmer.</p>
+                              <p>The Dhammachai International Research Institute of New Zealand and Australia has been conducting a number of activities in the fields of education and research in Buddhist Studies.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Ancient Languages</h2>
-            <p class="card-text">Many of these manuscripts are written in the Pali language, an ancient Indian language related to Sanskrit.</p>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <div class="card-body">
-            <h2 class="card-title">Ancient Scripts</h2>
-            <p class="card-text">There is no standard written script for Pali, so the manuscripts are written in a number of scripts, including Thai, Khmer and Gandhari.</p>
-          </div>
-        </div>
-      </div>
-      <!-- /.col-md-4 -->
-
-    </div>
-    <!-- /.row -->
+      <div class="company-image"></div>
+  </div>
+</section>
 
 @endsection

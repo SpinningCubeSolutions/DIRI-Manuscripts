@@ -1,11 +1,24 @@
 @extends('layouts.base')
 
+@section('header')
+    <!-- Start: Page Banner -->
+    <section class="page-banner services-banner">
+        <div class="container">
+            <div class="banner-header">
+                <h2>Login</h2>
+                <span class="underline center"></span>
+            </div>
+        </div>
+    </section>
+    <!-- End: Page Banner -->
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

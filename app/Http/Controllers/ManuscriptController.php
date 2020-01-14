@@ -90,7 +90,7 @@ class ManuscriptController extends Controller
     public function show(Manuscript $manuscript)
     {
         $manuscriptImages = $this->createImageArray($manuscript->images);
-        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => $manuscriptImages[1]]);
     }
 
     /**
