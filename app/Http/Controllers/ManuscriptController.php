@@ -31,6 +31,10 @@ class ManuscriptController extends Controller
         return $images;
     }
 
+    private function getDisplayImage(String $imagesString, $imageNumber = 1) {
+        return createImageArray($imagesString)[$imageNumber];
+    }
+
     /**
      * Display a listing of the resource.
      *

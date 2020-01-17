@@ -76,7 +76,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/about">About the Project</a></li>
-                                        <li><a href="services.html">Manuscripts</a></li>
+                                        <li><a href="/manuscripts/1">Manuscripts</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         @guest
 
@@ -85,7 +85,7 @@
                                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{ route('voyager.login') }}">Admin Panel</a></li>
-                                                    <li><a href="#">Create New Manuscript</a></li>
+                                                    <li><a href="{{ route('manuscripts.create') }}">Create New Manuscript</a></li>
                                                     <li><a href="#">Index of Manuscripts</a></li>
                                                 </ul>
                                             </li>

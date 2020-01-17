@@ -1,28 +1,20 @@
 {{-- Physical Location --}}
 <div class="form-group">
-    <div class="control-label col-sm-2">
-        <label for="physical_location">Physical Location</label>
-    </div>
     <div class="col-sm-8">
-        <input class="form-control" type="text" name="physical_location" id="physical_location" />
+        <input class="form-control" type="text" name="physical_location" id="physical_location" placeholder="Physical Location"/>
     </div>
 </div>
 
 {{-- Classmark --}}
 <div class="form-group">
-    <div class="control-label col-sm-2">
-        <label for="classmark">Classmark</label>
-    </div>
+    
     <div class="col-sm-8">
-        <input class="form-control" type="text" name="classmark" id="classmark" />
+        <input class="form-control" type="text" name="classmark" id="classmark" placeholder="Classmark" />
     </div>
 </div>
 
 {{-- Place of Origin --}}
-<div class="form-group">
-    <div class="control-label col-sm-2">
-        <label for="place_of_origin">Place of Origin</label>
-    </div>
+<div class="form-group">  0
     <div class="col-sm-8">
         <input class="form-control" type="text" name="place_of_origin" id="place_of_origin" />
     </div>
