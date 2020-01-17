@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::resource('manuscripts', 'ManuscriptController');
+
+// Manuscript viewer route
+Route::get('/manuscripts/{manuscript}/viewer', 'ManuscriptController@viewer')->name('manuscripts.viewer');
 Auth::routes();
 
 Route::group(['prefix' => 'admin'], function () {
@@ -26,4 +29,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/bigpurrs', 'ManuscriptController@BigPurrs');
+Route::get('/bigpurrs', 'ManuscriptController@bigpurrs')->name('big_purrs');

@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-     <!-- Start: Products Section -->
+     <!-- Start: Manuscript Section -->
  <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
@@ -23,6 +23,9 @@
                     <div class="text-center image-display">
                         <div class="post-thumbnail">
                             <img src="{{ $displayImage }}" width="500" alt="">
+                        </div>
+                        <div class="text-center">
+                        <button type="button" class="btn btn-primary" onclick="location.href='{{ route('manuscripts.viewer', ['manuscript' => $manuscript]) }}'">View Manuscript</button>
                         </div>
                     </div>
                     <div class="booksmedia-detail-box">
@@ -52,7 +55,7 @@
         </main>
     </div>
 </div>
-    
+
 
     {{-- <table>
         @foreach ($manuscriptImages as $image)

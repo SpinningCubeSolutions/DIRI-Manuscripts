@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b43b4e869c0fde09c7affeb2c92ca383",
+    "content-hash": "97225523a9b8972c9aae5b55f0bc0894",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1062,6 +1062,16 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "internetarchive/bookreader",
+            "version": "4.5.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:internetarchive/bookreader.git",
+                "reference": "master"
+            },
+            "type": "package"
         },
         {
             "name": "intervention/image",

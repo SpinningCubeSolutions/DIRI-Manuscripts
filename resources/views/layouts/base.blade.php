@@ -31,6 +31,7 @@
         <script src="js/html5shiv.min.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->
+        @yield('head_content')
     </head>
     
     <body>
@@ -76,8 +77,8 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/about">About the Project</a></li>
-                                        <li><a href="/manuscripts/1">Manuscripts</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="/manuscripts/6">Manuscripts</a></li>
+                                        <li><a href="{{ route('big_purrs') }}">Big Purrs</a></li>
                                         @guest
 
                                         @else

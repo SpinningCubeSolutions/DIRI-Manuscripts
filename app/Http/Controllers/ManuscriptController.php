@@ -97,6 +97,11 @@ class ManuscriptController extends Controller
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => $manuscriptImages[1]]);
     }
 
+    public function viewer(Manuscript $manuscript) {
+        $manuscriptImages = $this->createImageArray($manuscript->images);
+        return view('manuscripts.viewer', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => $manuscriptImages[1]]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -131,10 +136,14 @@ class ManuscriptController extends Controller
         //
     }
 
-    public function BigPurrs() {
-        $users = DB::table('users')->get();
-        $user = $users[0];
-        return view('bigpurrs', ['user' => $user]);
+    /**
+     * BookReader sample
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bigpurrs() {
+
+        return view('bigpurrs');
 
     }
 }

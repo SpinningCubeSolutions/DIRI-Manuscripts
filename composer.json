@@ -13,7 +13,8 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
-        "tcg/voyager": "^1.3"
+        "tcg/voyager": "^1.3",
+        "internetarchive/bookreader": "^4.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -62,10 +63,24 @@
             "@php artisan key:generate --ansi"
         ]
     },
-    "repositories": {
-        "hooks": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://larapack.io"
-        }
-    }
+        },
+        {
+            "type": "package",
+            "package": {
+               "name": "internetarchive/bookreader",
+               "version": "4.5.0",
+               "type": "package",
+               "source": {
+                  "type": "git",
+                  "reference": "master",
+                  "url": "git@github.com:internetarchive/bookreader.git"
+             }
+           }
+         }
+
+    ]
 }
