@@ -1,0 +1,12 @@
+.form-field {
+    padding-bottom: 20px;
+}
+
+.form-spacer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.input-field {
+    border: 3px solid #666666 !important;
+}

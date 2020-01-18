@@ -42,7 +42,8 @@ class ManuscriptController extends Controller
      */
     public function index()
     {
-        //
+        $manuscripts = Manuscript::all();
+        return view('manuscripts.index', ['manuscripts' => $manuscripts]);
     }
 
     /**
@@ -70,6 +71,8 @@ class ManuscriptController extends Controller
         $manuscript = Manuscript::create([            
             'physical_location' => $request->physical_location,
             'classmark' => $request->classmark,
+            'subject' => $request->subject,
+            'author' => $request->author,
             'place_of_origin' => $request->place_of_origin,
             'date_of_creation'=>$request->date_of_creation,
             'associated_persons' => $request->associated_persons,
@@ -78,6 +81,8 @@ class ManuscriptController extends Controller
             'format' => $request->format,
             'binding' => $request->binding,
             'images' => $formattedImageString,
+            'width' => $request->width,
+            'height' => $request->height,
             'user_id' => Auth::id,
         ]);
         $manuscriptImages = $this->createImageArray($formattedImageString);

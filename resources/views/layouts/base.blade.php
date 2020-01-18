@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
         
         <!-- Title -->
-        <title>DIRI Manuscript Project</title>
+        <title>@yield('title') | DIRI Manuscript Project</title>
         
         <!-- Favicon -->
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
@@ -77,7 +77,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/about">About the Project</a></li>
-                                        <li><a href="/manuscripts/6">Manuscripts</a></li>
+                                        <li><a href="{{ route('manuscripts.index')}}">Manuscripts</a></li>
                                         <li><a href="{{ route('big_purrs') }}">Big Purrs</a></li>
                                         @guest
 

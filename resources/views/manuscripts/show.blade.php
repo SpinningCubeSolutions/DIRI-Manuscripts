@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('title', 'Manuscript Details')
+
 @section('header')
     <!-- Start: Page Banner -->
     <section class="page-banner services-banner">
@@ -34,9 +36,11 @@
                             <div class="col-xs-12">
                                 <div class="post-center-content">
                                     <p><strong>Physical Location:</strong> {{ $manuscript->physical_location }}</p>
-                                    <p><strong>Classmark</strong> {{ $manuscript->classmark }}</p>
+                                    <p><strong>Classmark:</strong> {{ $manuscript->classmark }}</p>
+                                    <p><strong>Subject(s):</strong> {{ $manuscript->subject }}</p>
+                                    <p><strong>Author(s):</strong> {{ $manuscript->author }}</p>
                                     <p><strong>Place of Origin:</strong> {{ $manuscript->place_of_origin }}</p>
-                                    <p><strong>Date of Creation:</strong> {{ date('F d, Y', strtotime($manuscript->date_of_creation)) }}</p>
+                                    <p><strong>Date of Creation:</strong> {{ $manuscript->date_of_creation }}</p>
                                     <p><strong>Associated Persons:</strong> {{ $manuscript->associated_persons }}</p>
                                     <p><strong>Material:</strong> {{ $manuscript->material }}</p>
                                     <p><strong>Format:</strong> {{ $manuscript->format }}</p>
