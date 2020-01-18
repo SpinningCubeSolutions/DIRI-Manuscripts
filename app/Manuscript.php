@@ -9,6 +9,8 @@ class Manuscript extends Model
     protected $fillable = [
         'physical_location',
         'classmark',
+        'subject',
+        'author',
         'place_of_origin',
         'date_of_creation',
         'associated_persons',
