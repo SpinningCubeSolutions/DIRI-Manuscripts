@@ -14,6 +14,22 @@
     </div>
 </div>
 
+{{-- Subject(s) --}}
+<div class="form-group row">
+    <div class="col-sm-2"></div>  
+    <div class="col-sm-8 form-field">
+        <input class="form-control input-field" type="text" name="subject" id="subject" placeholder="Suject(s)" />
+    </div>
+</div>
+
+{{-- Author(s) --}}
+<div class="form-group row">
+    <div class="col-sm-2"></div>  
+    <div class="col-sm-8 form-field">
+        <input class="form-control input-field" type="text" name="author" id="author" placeholder="Suject(s)" />
+    </div>
+</div>
+
 {{-- Place of Origin --}}
 <div class="form-group row">
     <div class="col-sm-2"></div>  
