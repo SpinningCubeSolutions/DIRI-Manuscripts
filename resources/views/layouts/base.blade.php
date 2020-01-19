@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
     
 
 <head>        
@@ -76,9 +76,8 @@
                                 <div class="navbar-collapse hidden-sm hidden-xs">
                                     <ul class="nav navbar-nav">
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/about">About the Project</a></li>
+                                        <li><a href="#">About the Project</a></li>
                                         <li><a href="{{ route('manuscripts.index')}}">Manuscripts</a></li>
-                                        <li><a href="{{ route('big_purrs') }}">Big Purrs</a></li>
                                         @guest
 
                                         @else

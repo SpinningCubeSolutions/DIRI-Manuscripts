@@ -15,10 +15,10 @@
     <script src="{{URL::asset('/js/BookReader/jquery.bt.min.js') }}"></script>
 
     <!-- mmenu library -->
-    <link rel="stylesheet" href="../BookReader/mmenu/dist/css/jquery.mmenu.css"/>
-    <link rel="stylesheet" href="../BookReader/mmenu/dist/addons/navbars/jquery.mmenu.navbars.css"/>
-    <script src="../BookReader/mmenu/dist/js/jquery.mmenu.min.js"></script>
-    <script src="../BookReader/mmenu/dist/addons/navbars/jquery.mmenu.navbars.min.js"></script>
+    <link rel="stylesheet" href="{{URL::asset('/mmenu/dist/css/jquery.mmenu.css') }}"/>
+    <link rel="stylesheet" href="{{URL::asset('/mmenu/dist/addons/navbars/jquery.mmenu.navbars.css') }}"/>
+    <script src="{{URL::asset('/mmenu/dist/js/jquery.mmenu.min.js') }}"></script>
+    <script src="{{URL::asset('/mmenu/dist/addons/navbars/jquery.mmenu.navbars.min.js') }}"></script>
 
 
     <!-- BookReader and plugins -->
@@ -26,10 +26,10 @@
     <script src="{{ URL::asset('js/BookReader/BookReader.js') }}"></script>
 
     <!-- Mobile nav plugin -->
-    <script src="../BookReader/plugins/plugin.mobile_nav.js"></script>
+    <script src="{{ URL::asset('/js/BookReader/plugin.mobile_nav.js') }}"></script>
 
     <!-- URL-changing plugin -->
-    <script src="../BookReader/plugins/plugin.url.js"></script>
+    <script src="{{ URL::asset('/BookReader/plugin.url.js') }}"></script>
 
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
@@ -52,14 +52,10 @@
           data: [
               @foreach($manuscriptImages as $image)
                 [
-                    { width: 2670, height: 708,
+                    { width: {{ $manuscript->width }}, height: {{ $manuscript->height }},
                     uri: '{{ $image }}'}
                 ],
               @endforeach
-            [
-              { width: 2670, height: 708,
-                uri: 'https://drive.google.com/uc?id=1fyIWJ4nDPAYmhb5d557dOxib1IbVGXyy#mode/1up' },
-            ],
           ],
       
           // Book title and the URL used for the book title link

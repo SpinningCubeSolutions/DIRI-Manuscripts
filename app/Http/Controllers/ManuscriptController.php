@@ -26,13 +26,13 @@ class ManuscriptController extends Controller
 
     }
 
-    private function createImageArray(String $imagesString)  {
+    private static function createImageArray(String $imagesString)  {
         $images = explode(",", $imagesString);
         return $images;
     }
 
-    private function getDisplayImage(String $imagesString, $imageNumber = 1) {
-        return createImageArray($imagesString)[$imageNumber];
+    public static function getDisplayImage(Manuscript $manuscript, $imageNumber = 1) {
+        return self::createImageArray($manuscript->images)[$imageNumber];
     }
 
     /**

@@ -1,5 +1,8 @@
 @extends ('layouts.base')
 
+@section('title', 'Welcome')
+    
+
 @section('header')
     <!-- Start: Page Banner -->
     <section class="page-banner services-banner">
