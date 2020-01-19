@@ -83,7 +83,7 @@ class ManuscriptController extends Controller
             'images' => $formattedImageString,
             'width' => $request->width,
             'height' => $request->height,
-            'user_id' => Auth::id,
+            'user_id' => Auth::id(),
         ]);
         $manuscriptImages = $this->createImageArray($formattedImageString);
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
