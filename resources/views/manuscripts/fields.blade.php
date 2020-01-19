@@ -26,7 +26,7 @@
 <div class="form-group row">
     <div class="col-sm-2"></div>  
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="author" id="author" placeholder="Suject(s)" />
+        <input class="form-control input-field" type="text" name="author" id="author" placeholder="Author(s)" />
     </div>
 </div>
 
