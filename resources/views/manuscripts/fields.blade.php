@@ -66,7 +66,7 @@
 <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8 form-field">
-        <textarea name="images" id="images" rows="3" class="form-control input-field" placeholder="Material"></textarea>
+        <textarea name="material" id="material" rows="3" class="form-control input-field" placeholder="Material"></textarea>
     </div>
 </div>
 
