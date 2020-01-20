@@ -90,6 +90,7 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8 form-field">
         <strong>Manuscript Images</strong>
+        <p>Manuscript images must be entered one per line, with the | character at the end of the link, followed by the width and height separated by a colon.</p>
     </div>
 </div>
 
@@ -97,7 +98,7 @@
 <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <textarea name="images" id="images" rows="10" class="form-control input-field" required placeholder="Paste image links from Google Drive here. Must be ONLY ONE image link per line"></textarea>
+        <textarea name="images" id="images" rows="10" class="form-control input-field" required placeholder="Image link|width:height, eg. https://drive.google.com/open?id=ABCDEFGHIJKLMNOP|2000:6000"></textarea>
     </div>
 </div>
 

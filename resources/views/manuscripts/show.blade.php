@@ -60,12 +60,4 @@
     </div>
 </div>
 
-
-    {{-- <table>
-        @foreach ($manuscriptImages as $image)
-            <tr>
-            <td><img src="{{ URL::asset($image) }}" width="300" ></td>
-            </tr>
-        @endforeach
-    </table> --}}
 @endsection 

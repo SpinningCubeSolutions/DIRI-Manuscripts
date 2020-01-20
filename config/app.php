@@ -228,4 +228,8 @@ return [
 
     ],
 
+    'facades' => [
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+    ],
+
 ];

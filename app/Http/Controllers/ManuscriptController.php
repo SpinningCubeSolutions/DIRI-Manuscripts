@@ -28,11 +28,20 @@ class ManuscriptController extends Controller
 
     private static function createImageArray(String $imagesString)  {
         $images = explode(",", $imagesString);
-        return $images;
+         $imageData = [];
+         foreach($images as $img) {
+             $strParts = explode("|", $img);
+             $width_height = explode(":", $strParts[1]);
+             $imageData[] = ['image_link' =>  $strParts[0], 'width' => $width_height[0], 'height' => $width_height[1]];
+         }
+        return $imageData;
     }
 
     public static function getDisplayImage(Manuscript $manuscript, $imageNumber = 1) {
-        return self::createImageArray($manuscript->images)[$imageNumber];
+        $images = explode(",", $manuscript->images);
+        $image = $images[$imageNumber];
+        $imageLink = explode("|", $image);
+        return $imageLink[0];
     }
 
     /**
@@ -99,12 +108,12 @@ class ManuscriptController extends Controller
     public function show(Manuscript $manuscript)
     {
         $manuscriptImages = $this->createImageArray($manuscript->images);
-        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => $manuscriptImages[1]]);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => self::getDisplayImage($manuscript)]);
     }
 
     public function viewer(Manuscript $manuscript) {
         $manuscriptImages = $this->createImageArray($manuscript->images);
-        return view('manuscripts.viewer', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => $manuscriptImages[1]]);
+    return view('manuscripts.viewer', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => self::getDisplayImage($manuscript)]);
     }
 
     /**
@@ -141,14 +150,4 @@ class ManuscriptController extends Controller
         //
     }
 
-    /**
-     * BookReader sample
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function bigpurrs() {
-
-        return view('bigpurrs');
-
-    }
 }

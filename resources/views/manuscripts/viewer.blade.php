@@ -51,9 +51,10 @@
         var options = {
           data: [
               @foreach($manuscriptImages as $image)
+                
                 [
-                    { width: {{ $manuscript->width }}, height: {{ $manuscript->height }},
-                    uri: '{{ $image }}'}
+                    { width: {{ $image["width"] }}, height: {{ $image["height"] }},
+                    uri: '{{ $image["image_link"] }}'}
                 ],
               @endforeach
           ],
@@ -65,7 +66,7 @@
           bookUrlTitle: '',
       
           // thumbnail is optional, but it is used in the info dialog
-          thumbnail: '{{ $displayImage }}',
+          //thumbnail: '{{ $displayImage }}',
           // Metadata is optional, but it is used in the info dialog
           metadata: [
             {label: 'Origin', value: '{{ $manuscript->place_of_origin }}'},
