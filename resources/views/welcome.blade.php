@@ -21,7 +21,7 @@
   <div class="company-info">
       <div class="container">
           <div class="row">
-              <div class="col-sm-8 border">
+              <div class="col-sm-8">
                   <div class="row">
                       <div class="col-sm-11">
                           <div class="company-detail">

@@ -1,6 +1,6 @@
-@extends ('layouts.base')
+@extends('layouts.base')
 
-@section('title', 'Create New Manuscript')
+@section('title', 'Edit Manuscript')
 
 @section('head_content')
     <link href="{{URL::asset('css/custom.css') }}" rel="stylesheet" type="text/css" />
@@ -11,7 +11,7 @@
     <section class="page-banner services-banner">
         <div class="container">
             <div class="banner-header">
-                <h2>Add New Manuscript</h2>
+                <h2>Edit Manuscript</h2>
                 <span class="underline center"></span>
             </div>
         </div>
@@ -19,23 +19,17 @@
     <!-- End: Page Banner -->
 @endsection
 
-@section ('content')
-    <div class="col-xs-12">
-        <div class="text-center">    
-            <h1>Add New Manuscript</h1>
-            <br>
-        </div>
-    </div>
+@section('content')
 
-    <form action="{{ route('manuscripts.store')}}" method="post">
-        @include('manuscripts.fields')
+<form action="{{ route('manuscripts.update', ['manuscript' => $manuscript]) }}" method="post">
+    @csrf
+    @method('PUT')
+    @include('manuscripts.fields')
         <div class="form-group row">
             <div class="col-xs-12 text-center">
-                <button type="submit" class="btn btn-primary">Add Manuscript</button>
+                <button type="submit" class="btn btn-primary">Update Manuscript</button>
             </div>
         </div>
-        
-    </form>
+</form>
+    
 @endsection
-
-

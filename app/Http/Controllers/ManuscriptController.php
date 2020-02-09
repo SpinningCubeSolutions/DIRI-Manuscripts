@@ -90,8 +90,6 @@ class ManuscriptController extends Controller
             'format' => $request->format,
             'binding' => $request->binding,
             'images' => $formattedImageString,
-            'width' => $request->width,
-            'height' => $request->height,
             'user_id' => Auth::id(),
         ]);
         $manuscriptImages = $this->createImageArray($formattedImageString);
@@ -122,9 +120,11 @@ class ManuscriptController extends Controller
      * @param  \App\Manuscript  $manuscript
      * @return \Illuminate\Http\Response
      */
-    public function edit(Manuscript $manuscript)
+    public function edit($id)
     {
-        
+        $manuscript = Manuscript::findOrFail($id);
+        $images = str_replace(",", "\n", $manuscript->images);
+        return view('manuscripts.edit', ['manuscript' => $manuscript, 'images' => $images]);
     }
 
     /**
@@ -134,9 +134,26 @@ class ManuscriptController extends Controller
      * @param  \App\Manuscript  $manuscript
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Manuscript $manuscript)
+    public function update(Request $request, $id)
     {
-        //
+        $manuscript = Manuscript::findOrFail($id);
+        $formattedImageString = $this->formatImageString($request->images);
+        $manuscript->physical_location = $request->physical_location;
+        $manuscript->classmark = $request->classmark;
+        $manuscript->subject = $request->subject;
+        $manuscript->author = $request->author;
+        $manuscript->place_of_origin = $request->place_of_origin;
+        $manuscript->date_of_creation = $request->date_of_creation;
+        $manuscript->associated_persons = $request->associated_persons;
+        $manuscript->physical_description = $request->physical_description;
+        $manuscript->material= $request->material;
+        $manuscript->format = $request->format;
+        $manuscript->binding = $request->binding;
+        $manuscript->images = $formattedImageString;
+        $manuscript->save();
+
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $this->createImageArray($manuscript->images), 'displayImage' => self::getDisplayImage($manuscript)]);
+
     }
 
     /**

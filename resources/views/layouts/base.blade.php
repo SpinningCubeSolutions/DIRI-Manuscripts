@@ -156,8 +156,9 @@
 
         @yield('header')
 
-
-                @yield('content')
+                <div class="container">
+                    @yield('content')
+                </div>
                 
                 <!-- Start: Footer -->
                 <footer class="site-footer">

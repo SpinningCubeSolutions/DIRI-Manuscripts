@@ -1,88 +1,94 @@
 {{-- Physical Location --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    
+    <div class="form-label col-sm-2"><br>Physical Location</div>
+    
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="physical_location" id="physical_location" placeholder="Physical Location"/>
+    <input class="form-control input-field" type="text" name="physical_location" id="physical_location" value="{{ old('physical_location', $manuscript->physical_location ?? null) }}" placeholder="Physical Location"/>
     </div>
 </div>
 
 {{-- Classmark --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    
+    <div class="form-label col-sm-2"><br>Classmark</div>
+    
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="classmark" id="classmark" placeholder="Classmark" />
+        <input class="form-control input-field" type="text" name="classmark" id="classmark" value="{{ old('classmark', $manuscript->classmark ?? null) }}" placeholder="Classmark" />
     </div>
 </div>
 
 {{-- Subject(s) --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>  
+    
+    <div class="form-label col-sm-2"><br>Subject(s)</div>  
+    
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="subject" id="subject" placeholder="Subject(s)" />
+        <input class="form-control input-field" type="text" name="subject" id="subject" value="{{ old('subject', $manuscript->subject ?? null) }}" placeholder="Subject(s)" />
     </div>
 </div>
 
 {{-- Author(s) --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>  
+    <div class="col-sm-2 form-label"><br>Author(s)</div>  
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="author" id="author" placeholder="Author(s)" />
+        <input class="form-control input-field" type="text" name="author" id="author" value="{{ old('author', $manuscript->author ?? null) }}" placeholder="Author(s)" />
     </div>
 </div>
 
 {{-- Place of Origin --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>  
+    <div class="col-sm-2 form-label"><br>Place of Origin</div>  
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="place_of_origin" id="place_of_origin" placeholder="Place of Origin" />
+        <input class="form-control input-field" type="text" name="place_of_origin" id="place_of_origin" value="{{ old('place_of_origin', $manuscript->place_of_origin ?? null) }}" placeholder="Place of Origin" />
     </div>
 </div>
 
 {{-- Date of Creation --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Date of Creation</div>
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="date_of_creation" id="date_of_creation" placeholder="Date of Creation" />
+        <input class="form-control input-field" type="text" name="date_of_creation" id="date_of_creation" value="{{ old('date_of_creation', $manuscript->date_of_creation ?? null) }}" placeholder="Date of Creation" />
     </div>
 </div>
 
 {{-- Associated Persons --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Associated Persons</div>
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="associated_persons" id="associated_persons" placeholder="Associated Person(s)" />
+        <input class="form-control input-field" type="text" name="associated_persons" id="associated_persons" value="{{ old('associated_persons', $manuscript->associated_persons ?? null) }}" placeholder="Associated Person(s)" />
     </div>
 </div>
 
 {{-- Physical Description --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Physical Description</div>
     <div class="col-sm-8 form-field">
-        <textarea name="physical_description" id="physical_description" rows="5" class="form-control input-field" placeholder="Physical Description"></textarea>
+        <textarea name="physical_description" id="physical_description" rows="5" class="form-control input-field" placeholder="Physical Description">{{ old('physical_description', $manuscript->physical_description ?? null) }}</textarea>
     </div>
 </div>
 
 {{-- Material --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Material</div>
     <div class="col-sm-8 form-field">
-        <textarea name="material" id="material" rows="3" class="form-control input-field" placeholder="Material"></textarea>
+        <textarea name="material" id="material" rows="3" class="form-control input-field" value="{{ old('material', $manuscript->material ?? null) }}placeholder="Material"></textarea>
     </div>
 </div>
 
 {{-- Format --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Format</div>
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="format" id="format" placeholder="Format"/>
+        <input class="form-control input-field" type="text" name="format" id="format" value="{{ old('format', $manuscript->format ?? null) }}" placeholder="Format"/>
     </div>
 </div>
 
 {{-- Binding --}}
 <div class="form-group row">
-    <div class="col-sm-2"></div>
+    <div class="form-label col-sm-2"><br>Binding</div>
     <div class="col-sm-8 form-field">
-        <input class="form-control input-field" type="text" name="binding" id="binding" placeholder="Binding"/>
+        <input class="form-control input-field" type="text" name="binding" id="binding" value="{{ old('binding', $manuscript->binding ?? null) }}" placeholder="Binding"/>
     </div>
 </div>
 
@@ -98,20 +104,7 @@
 <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <textarea name="images" id="images" rows="10" class="form-control input-field" required placeholder="Image link|width:height, eg. https://drive.google.com/open?id=ABCDEFGHIJKLMNOP|2000:6000"></textarea>
-    </div>
-</div>
-
-<div class="form-group row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-1">Image Width</div>
-    <div class="col-sm-2">
-        <input class="form-control input-field" type="text" name="width" id="width" placeholder="px"/>
-    </div>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-1">Image Height</div>
-    <div class="col-sm-2">
-        <input class="form-control input-field" type="text" name="height" id="height" placeholder="px"/>
+        <textarea name="images" id="images" rows="10" class="form-control input-field" required placeholder="Image link|width:height, eg. https://drive.google.com/open?id=ABCDEFGHIJKLMNOP|2000:6000">{{ old('images', $images ?? null) }}</textarea>
     </div>
 </div>
 
