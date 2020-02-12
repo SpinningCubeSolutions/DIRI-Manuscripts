@@ -95,16 +95,45 @@
 <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8 form-field">
-        <strong>Manuscript Images</strong>
-        <p>Manuscript images must be entered one per line, with the | character at the end of the link, followed by the width and height separated by a colon.</p>
+        <strong>Manuscript Images (from Google Drive) </strong>
+    <a href="{{ route('google-drive') }}" target="_blank"> Get Image Links</a>
     </div>
-</div>
+</div> 
+
+{{-- href="{{ route('google-drive') }}" target="_blank" --}}
+
+{{-- <div class="gdrive-modal" id="myGDriveM">
+    <div class="gdrive-modal-content">
+        <span class="gdrive-close-button">&times;</span>
+        @include('googledrive')
+
+        <script>
+            var gdmodal = document.getElementById("myGDriveM");
+            var btn = document.getElementById("GDImages");
+            var span = document.getElementsByClassName("gdrive-close-button")[0];
+            btn.onclick = function() {
+                gdmodal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                gdmodal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == gdmodal) {
+                    gdmodal.style.display = "none";
+                }
+                
+            }
+        </script>
+    </div>
+</div> --}}
 
 {{-- images --}}
 <div class="form-group row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <textarea name="images" id="images" rows="10" class="form-control input-field" required placeholder="Image link|width:height, eg. https://drive.google.com/open?id=ABCDEFGHIJKLMNOP|2000:6000">{{ old('images', $images ?? null) }}</textarea>
+        <textarea name="images" id="images" rows="10" class="form-control input-field" placeholder="Image link|width:height, eg. https://drive.google.com/open?id=ABCDEFGHIJKLMNOP|2000:6000">{{ old('images', $images ?? null) }}</textarea>
     </div>
 </div>
 

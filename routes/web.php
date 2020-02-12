@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/google-drive', function() {
+    return view('manuscripts.images');
+})->name('google-drive');
+
 Route::resource('manuscripts', 'ManuscriptController');
 
 // Manuscript viewer route
