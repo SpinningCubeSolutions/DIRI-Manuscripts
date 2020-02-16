@@ -66,7 +66,6 @@
           bookUrlTitle: '',
       
           // thumbnail is optional, but it is used in the info dialog
-          //thumbnail: '{{ $displayImage }}',
           // Metadata is optional, but it is used in the info dialog
           metadata: [
             {label: 'Origin', value: '{{ $manuscript->place_of_origin }}'},

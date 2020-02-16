@@ -100,34 +100,6 @@
     </div>
 </div> 
 
-{{-- href="{{ route('google-drive') }}" target="_blank" --}}
-
-{{-- <div class="gdrive-modal" id="myGDriveM">
-    <div class="gdrive-modal-content">
-        <span class="gdrive-close-button">&times;</span>
-        @include('googledrive')
-
-        <script>
-            var gdmodal = document.getElementById("myGDriveM");
-            var btn = document.getElementById("GDImages");
-            var span = document.getElementsByClassName("gdrive-close-button")[0];
-            btn.onclick = function() {
-                gdmodal.style.display = "block";
-            }
-
-            span.onclick = function() {
-                gdmodal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == gdmodal) {
-                    gdmodal.style.display = "none";
-                }
-                
-            }
-        </script>
-    </div>
-</div> --}}
 
 {{-- images --}}
 <div class="form-group row">

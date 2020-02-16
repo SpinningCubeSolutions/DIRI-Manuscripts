@@ -6,18 +6,7 @@
     <link href="{{URL::asset('css/custom.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
-@section('header')
-    <!-- Start: Page Banner -->
-    <section class="page-banner services-banner">
-        <div class="container">
-            <div class="banner-header">
-                <h2>Add New Manuscript</h2>
-                <span class="underline center"></span>
-            </div>
-        </div>
-    </section>
-    <!-- End: Page Banner -->
-@endsection
+@section('heading', 'Add New Manuscript')
 
 @section ('content')
     <div class="col-xs-12">

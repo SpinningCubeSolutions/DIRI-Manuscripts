@@ -6,6 +6,7 @@ use App\Manuscript;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 
 
 class ManuscriptController extends Controller
@@ -37,12 +38,25 @@ class ManuscriptController extends Controller
         return $imageData;
     }
 
-    public static function getDisplayImage(Manuscript $manuscript, $imageNumber = 1) {
-        $images = explode(",", $manuscript->images);
-        $image = $images[$imageNumber];
-        $imageLink = explode("|", $image);
-        return $imageLink[0];
-    }
+    // public static function getDisplayImage(Manuscript $manuscript, $imageNumber = 1) {
+    //     // Return 'No Preview' image if there are no manuscript images
+    //     if(!isset($manuscript) or !isset($manuscript->images) or $manuscript->images == "" or $manuscript->images == " ") {
+    //         return '/img/NoPreview.jpg';
+    //     }
+    //     try {
+    //         $images = explode(",", $manuscript->images);
+    //         if($images == false or empty($images)) {
+    //             return '/img/NoPreview.jpg'; //If an empty string is passed in, return the 'No Preview' image
+    //         } elseif(count($images == 1)) {
+    //             return $images[0]; //If there is only one image, return it
+    //         }
+    //         $image = $images[$imageNumber];
+    //         $imageLink = explode("|", $image);
+    //         return $imageLink[0];
+    //     } catch (\Exception $e) {
+    //         return '/img/NoPreview.jpg';
+    //     }
+    // }
 
     /**
      * Display a listing of the resource.
@@ -77,7 +91,7 @@ class ManuscriptController extends Controller
         $users = DB::table('users')->get();
         $user = $users[0];
         $formattedImageString = $this->formatImageString($request->images);
-        $manuscript = Manuscript::create([            
+        $manuscript = Manuscript::create([
             'physical_location' => $request->physical_location,
             'classmark' => $request->classmark,
             'subject' => $request->subject,
@@ -90,10 +104,11 @@ class ManuscriptController extends Controller
             'format' => $request->format,
             'binding' => $request->binding,
             'images' => $formattedImageString,
+            'preview_image' => $request->preview_image,
             'user_id' => Auth::id(),
         ]);
         $manuscriptImages = $this->createImageArray($formattedImageString);
-        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => self::getDisplayImage($manuscript)]);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
 
     }
 
@@ -106,12 +121,12 @@ class ManuscriptController extends Controller
     public function show(Manuscript $manuscript)
     {
         $manuscriptImages = $this->createImageArray($manuscript->images);
-        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => self::getDisplayImage($manuscript)]);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
     }
 
     public function viewer(Manuscript $manuscript) {
         $manuscriptImages = $this->createImageArray($manuscript->images);
-    return view('manuscripts.viewer', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages, 'displayImage' => self::getDisplayImage($manuscript)]);
+        return view('manuscripts.viewer', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
     }
 
     /**
@@ -150,9 +165,10 @@ class ManuscriptController extends Controller
         $manuscript->format = $request->format;
         $manuscript->binding = $request->binding;
         $manuscript->images = $formattedImageString;
+        $manuscript->preview_image = $request->preview_image;
         $manuscript->save();
 
-        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $this->createImageArray($manuscript->images), 'displayImage' => self::getDisplayImage($manuscript)]);
+        return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $this->createImageArray($manuscript->images)]);
 
     }
 
@@ -167,4 +183,36 @@ class ManuscriptController extends Controller
         //
     }
 
+    public function showSearchForm() {
+        return view('manuscripts.search');
+    }
+
+    public function search(Request $request) {
+        $param = $request->search_parameters;
+        $searchResults = new Collection();
+        $pl_res = Manuscript::where('physical_location', 'LIKE','%'.$param.'%')->get();
+        $cm_res = Manuscript::where('classmark', 'LIKE','%'.$param.'%')->get();
+        $po_res = Manuscript::where('place_of_origin', 'LIKE','%'.$param.'%')->get();
+        $doc_res = Manuscript::where('date_of_creation', 'LIKE','%'.$param.'%')->get();
+        $sub_res = Manuscript::where('subject', 'LIKE','%'.$param.'%')->get();
+        $aut_res = Manuscript::where('author', 'LIKE','%'.$param.'%')->get();
+        $aspn_res = Manuscript::where('associated_persons', 'LIKE','%'.$param.'%')->get();
+        $pd_res = Manuscript::where('physical_description', 'LIKE','%'.$param.'%')->get();
+        $mat_res = Manuscript::where('material', 'LIKE','%'.$param.'%')->get();
+        $fmt_res = Manuscript::where('format', 'LIKE','%'.$param.'%')->get();
+        $bnd_res = Manuscript::where('binding', 'LIKE','%'.$param.'%')->get();
+
+        $searchResults = $pl_res->merge($cm_res)
+                                ->merge($po_res)
+                                ->merge($doc_res)
+                                ->merge($sub_res)
+                                ->merge($aut_res)
+                                ->merge($aspn_res)
+                                ->merge($pd_res)
+                                ->merge($mat_res)
+                                ->merge($fmt_res)
+                                ->merge($bnd_res);
+
+        dd($searchResults);
+    }
 }

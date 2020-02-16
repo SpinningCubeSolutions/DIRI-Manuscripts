@@ -78,10 +78,11 @@
                                         <li><a href="/">Home</a></li>
                                         <li><a href="#">About the Project</a></li>
                                         <li><a href="{{ route('manuscripts.index')}}">Manuscripts</a></li>
+                                        <li><a href="{{ route('manuscripts.showSearchForm') }}">Search</a></li>
                                         @guest
 
                                         @else
-                                            <li class="dropdown active">
+                                            <li class="dropdown">
                                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="{{ route('voyager.login') }}">Admin Panel</a></li>
@@ -94,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mobile-menu hidden-lg hidden-md">
+                        {{-- <div class="mobile-menu hidden-lg hidden-md">
                             <a href="#mobile-menu"><i class="fa fa-navicon"></i></a>
                             <div id="mobile-menu">
                                 <ul>
@@ -147,14 +148,23 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </nav>
                 </div>
             </div>
         </header>
         <!-- End: Header Section -->
 
-        @yield('header')
+            <!-- Start: Page Banner -->
+        <section class="page-banner services-banner header-banner">
+            <div class="container">
+                <div class="banner-header">
+                    <h2>@yield('heading')</h2>
+                    <span class="underline center"></span>
+                </div>
+            </div>
+        </section>
+        <!-- End: Page Banner -->
 
                 <div class="container">
                     @yield('content')

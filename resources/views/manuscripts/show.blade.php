@@ -2,18 +2,7 @@
 
 @section('title', 'Manuscript Details')
 
-@section('header')
-    <!-- Start: Page Banner -->
-    <section class="page-banner services-banner">
-        <div class="container">
-            <div class="banner-header">
-                <h2>Manuscript Listing</h2>
-                <span class="underline center"></span>
-            </div>
-        </div>
-    </section>
-    <!-- End: Page Banner -->
-@endsection
+@section('heading','Manuscript Details')
 
 @section('content')
      <!-- Start: Manuscript Section -->
@@ -24,7 +13,7 @@
                 <div class="container">
                     <div class="text-center image-display">
                         <div class="post-thumbnail">
-                            <img src="{{ $displayImage }}" width="500" alt="">
+                            <img src="{{ $manuscript->preview_image }}" width="500" alt="">
                         </div>
                         <div class="text-center">
                         <button type="button" class="btn btn-primary" onclick="location.href='{{ route('manuscripts.viewer', ['manuscript' => $manuscript]) }}'">View Manuscript</button>

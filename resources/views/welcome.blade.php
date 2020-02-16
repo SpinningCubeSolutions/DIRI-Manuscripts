@@ -3,18 +3,7 @@
 @section('title', 'Welcome')
     
 
-@section('header')
-    <!-- Start: Page Banner -->
-    <section class="page-banner services-banner">
-        <div class="container">
-            <div class="banner-header">
-                <h2>Welcome</h2>
-                <span class="underline center"></span>
-            </div>
-        </div>
-    </section>
-    <!-- End: Page Banner -->
-@endsection
+@section('heading', 'Welcome!')
 
 @section ('content')
 <section class="who-we-are">

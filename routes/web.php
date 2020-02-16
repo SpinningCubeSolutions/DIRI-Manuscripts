@@ -19,10 +19,17 @@ Route::get('/google-drive', function() {
     return view('manuscripts.images');
 })->name('google-drive');
 
-Route::resource('manuscripts', 'ManuscriptController');
-
 // Manuscript viewer route
 Route::get('/manuscripts/{manuscript}/viewer', 'ManuscriptController@viewer')->name('manuscripts.viewer');
+
+// Search routes                                        
+Route::get('/manuscripts/search', 'ManuscriptController@showSearchForm')->name('manuscripts.showSearchForm');
+Route::post('/manuscripts/search', 'ManuscriptController@search')->name('manuscripts.search');
+Route::resource('manuscripts', 'ManuscriptController');
+
+
+
+// Authentication
 Auth::routes();
 
 Route::group(['prefix' => 'admin'], function () {
@@ -33,4 +40,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/bigpurrs', 'ManuscriptController@bigpurrs')->name('big_purrs');
+
