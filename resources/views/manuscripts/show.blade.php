@@ -15,6 +15,7 @@
                         <div class="post-thumbnail">
                             <img src="{{ $manuscript->preview_image }}" width="500" alt="">
                         </div>
+                        <br>
                         <div class="text-center">
                         <button type="button" class="btn btn-primary" onclick="location.href='{{ route('manuscripts.viewer', ['manuscript' => $manuscript]) }}'">View Manuscript</button>
                         </div>
@@ -40,7 +41,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>
-                        <p><strong>Physical Description</strong> {{ $manuscript->physical_description }} </p>
+                        <p><strong>Physical Description</strong><br> {{ $manuscript->physical_description }} </p>
 
                     </div>
                 </div>

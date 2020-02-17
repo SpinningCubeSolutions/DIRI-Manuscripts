@@ -4,7 +4,7 @@
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="well well-lg">
                     <div class="text-center">
-                        <img src="{{ $manuscript->preview_image }}" alt="" width="150">
+                        <a href="{{ route('manuscripts.show', ['manuscript' => $manuscript]) }}"><img src="{{ $manuscript->preview_image }}" alt="" width="150"></a>
                     </div>
                     <div>
                         <a href="{{ route('manuscripts.show', ['manuscript' => $manuscript]) }}">{{ $manuscript->place_of_origin }}</a>

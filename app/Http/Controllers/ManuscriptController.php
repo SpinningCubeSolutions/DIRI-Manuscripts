@@ -213,6 +213,14 @@ class ManuscriptController extends Controller
                                 ->merge($fmt_res)
                                 ->merge($bnd_res);
 
-        dd($searchResults);
+        return view('manuscripts.searchresults', ['manuscripts' => $searchResults, 'searchTerm' => $param]);
+    }
+
+    public function searchOne(Request $request) {
+        $param = $request->search_parameters;
+        $category = $request->category;
+        $searchResults = Manuscript::where($category, 'LIKE','%'.$param.'%')->get();
+
+        return view('manuscripts.searchresults', ['manuscripts' => $searchResults, 'searchTerm' => $param]);
     }
 }

@@ -55,8 +55,12 @@
 }
 
 .gdrive-close-button:hover,
-.gdrive-close-button:focus {
+.gdrive-close-button:focus { 
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.padded-div {
+    padding-bottom: 30px;
 }

@@ -25,9 +25,9 @@ Route::get('/manuscripts/{manuscript}/viewer', 'ManuscriptController@viewer')->n
 // Search routes                                        
 Route::get('/manuscripts/search', 'ManuscriptController@showSearchForm')->name('manuscripts.showSearchForm');
 Route::post('/manuscripts/search', 'ManuscriptController@search')->name('manuscripts.search');
+Route::post('/manuscripts/search_one', 'ManuscriptController@searchOne')->name('manuscripts.searchOne');
+// Manuscript resource controller routes
 Route::resource('manuscripts', 'ManuscriptController');
-
-
 
 // Authentication
 Auth::routes();
