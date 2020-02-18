@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
-@section('title', 'Search')
-@section('heading', 'Search')
+@section('title', 'Search Manuscripts')
+@section('heading', 'Search Manuscripts')
 
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <h4>You can search our manuscript library here. Enter search terms below. </h4><br>
+            <p style="font-size: 20px;">You can search our manuscript library here. Enter search terms below. </p><br>
         </div>
     </div>
     <h3>Search All Fields</h3>

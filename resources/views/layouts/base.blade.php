@@ -75,7 +75,7 @@
                   <a class="nav-link" href="{{ route('manuscripts.index')}}">Manuscript List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('manuscripts.showSearchForm') }}">Search</a>
+                    <a class="nav-link" href="{{ route('manuscripts.showSearchForm') }}">Search Manuscripts</a>
                   </li>
                   @guest
                       

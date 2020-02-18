@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt&display=swap');
+
 /*   
  * Template Name: PrettyDocs - Bootstrap 4 Template for documentations
  * Version: 2.0
@@ -14,6 +16,13 @@ body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prompt';
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
 }
 
 html, body {
