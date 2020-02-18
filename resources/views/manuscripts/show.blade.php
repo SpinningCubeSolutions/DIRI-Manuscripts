@@ -44,6 +44,12 @@
                         <p><strong>Physical Description</strong><br> {{ $manuscript->physical_description }} </p>
 
                     </div>
+                    @guest
+                        
+                    @else
+                        <button type="button" class="btn btn-primary" onclick="location.href='{{ route('manuscripts.edit', ['manuscript' => $manuscript]) }}'">Edit Manuscript</button>
+                        <p>To delete a manuscript, please contact <a href="mailto:michael@spinningcube.co.nz">the webmaster.</a></p>
+                    @endguest
                 </div>
             </div>
         </main>

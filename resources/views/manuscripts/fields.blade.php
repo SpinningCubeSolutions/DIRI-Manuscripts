@@ -109,4 +109,13 @@
     </div>
 </div>
 
+{{-- Preview Image --}}
+<div class="form-group row">
+    <div class="form-label col-sm-2"><br></div>
+    <div class="col-sm-8 form-field">
+        <p>Please copy and paste one of the image links from above to use as a preview image in the manuscript listing.</p>
+        <input class="form-control input-field" type="text" name="preview_image" id="preview_image" value="{{ old('preview_image', $manuscript->preview_image ?? null) }}" placeholder="Preview Image (DO NOT paste the width and height part, e.g. |2000:180) "/>
+    </div>
+</div>
+
 @csrf

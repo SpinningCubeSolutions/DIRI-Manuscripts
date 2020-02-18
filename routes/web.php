@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function() {
+    return view('about');
+});
+
 Route::get('/google-drive', function() {
     return view('manuscripts.images');
 })->name('google-drive');
@@ -26,6 +30,7 @@ Route::get('/manuscripts/{manuscript}/viewer', 'ManuscriptController@viewer')->n
 Route::get('/manuscripts/search', 'ManuscriptController@showSearchForm')->name('manuscripts.showSearchForm');
 Route::post('/manuscripts/search', 'ManuscriptController@search')->name('manuscripts.search');
 Route::post('/manuscripts/search_one', 'ManuscriptController@searchOne')->name('manuscripts.searchOne');
+Route::post('/manuscripts/dd', 'ManuscriptController@dumpAndDie')->name('dumpAndDie');
 // Manuscript resource controller routes
 Route::resource('manuscripts', 'ManuscriptController');
 

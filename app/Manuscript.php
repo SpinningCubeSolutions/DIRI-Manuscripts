@@ -20,5 +20,6 @@ class Manuscript extends Model
         'binding',
         'images',
         'user_id',
+        'preview_image',
     ];
 }

@@ -17,8 +17,8 @@
     <!-- Plugins CSS -->    
     <link rel="stylesheet" href="{{URL::asset('css/prism.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">  
-    {{-- W3 CSS --}}
-    {{-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> --}}
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
       
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{{URL::asset('css/styles.css')}}">
@@ -52,7 +52,7 @@
 			            <input type="text" placeholder="Search..." name="search" class="form-control search-input">
 			            
 			            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-			            
+			            @csrf
 			        </form>
                 </div>
                 
@@ -68,7 +68,7 @@
                   <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('manuscripts.index')}}">Manuscript List</a>
@@ -126,7 +126,7 @@
 
                     </div>
                     <div class="col-sm-5">
-                        <p>Website designed by Spinning Cube Solutions</p>
+                        <p>Website created by Spinning Cube Solutions</p>
                         <p>&copy; 2020 Dhammachai International Research Institute</p>
                     </div>
                 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Collection;
 
 
+
 class ManuscriptController extends Controller
 {
     public function __construct() {
@@ -37,26 +38,6 @@ class ManuscriptController extends Controller
          }
         return $imageData;
     }
-
-    // public static function getDisplayImage(Manuscript $manuscript, $imageNumber = 1) {
-    //     // Return 'No Preview' image if there are no manuscript images
-    //     if(!isset($manuscript) or !isset($manuscript->images) or $manuscript->images == "" or $manuscript->images == " ") {
-    //         return '/img/NoPreview.jpg';
-    //     }
-    //     try {
-    //         $images = explode(",", $manuscript->images);
-    //         if($images == false or empty($images)) {
-    //             return '/img/NoPreview.jpg'; //If an empty string is passed in, return the 'No Preview' image
-    //         } elseif(count($images == 1)) {
-    //             return $images[0]; //If there is only one image, return it
-    //         }
-    //         $image = $images[$imageNumber];
-    //         $imageLink = explode("|", $image);
-    //         return $imageLink[0];
-    //     } catch (\Exception $e) {
-    //         return '/img/NoPreview.jpg';
-    //     }
-    // }
 
     /**
      * Display a listing of the resource.
@@ -222,5 +203,9 @@ class ManuscriptController extends Controller
         $searchResults = Manuscript::where($category, 'LIKE','%'.$param.'%')->get();
 
         return view('manuscripts.searchresults', ['manuscripts' => $searchResults, 'searchTerm' => $param]);
+    }
+
+    public function dumpAndDie(Request $request) {
+        dd($request);
     }
 }

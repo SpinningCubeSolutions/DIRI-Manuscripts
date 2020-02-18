@@ -4,6 +4,7 @@
 
 .form-label {
     text-align: right;
+    padding-bottom: 20px;
 }
 
 @media (max-width: 780px) {
