@@ -9,22 +9,24 @@
             <h4>You can search our manuscript library here. Enter search terms below. </h4><br>
         </div>
     </div>
+    <h3>Search All Fields</h3>
+    <br>
     <form action="{{ route('manuscripts.search') }}" method="post">
         
         <div class="form-group row">
-            <div class="form-label col-sm-2"><br>Search terms</div>
-            <div class="col-sm-8 form-field">
+            <div class="col-sm-10 form-field">
                 <input class="form-control input-field" type="text" name="search_parameters" id="search_parameters" placeholder="Enter search terms" />
             </div>
-        </div>
+        {{-- </div>
 
-        <div class="form-group row">
+        <div class="form-group row"> --}}
             <div class="col-xs-12 text-center">
                 <button type="submit" class="btn btn-primary">Search</button>
             </div>
         </div>
         @csrf
     </form>
+    <br>
 
     <h3>Search by Category</h3>
     <br>
@@ -52,8 +54,8 @@
             <input class="form-control input-field" type="text" name="search_parameters" id="search_parameters" placeholder="Enter search terms" />
         </div>
 
-    </div>
-    <div class="form-group row">
+    {{-- </div>
+    <div class="form-group row"> --}}
         <div class="col-xs-12 text-center">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>

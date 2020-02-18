@@ -17,6 +17,8 @@
     <!-- Plugins CSS -->    
     <link rel="stylesheet" href="{{URL::asset('css/prism.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">  
+    {{-- W3 CSS --}}
+    {{-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> --}}
       
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{{URL::asset('css/styles.css')}}">
@@ -24,7 +26,7 @@
     @yield('head_content')
 </head>
 
-<body class="body-green">
+<body class="body-green" style="padding-bottom: 0;">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -33,7 +35,7 @@
                     <h1 class="logo">
                         <a href="index.html">
                             {{-- <span aria-hidden="true" class="icon_documents_alt icon"></span> --}}
-                            <span class="text-highlight">DIRI</span><span class="text-bold">Manuscripts</span>
+                            <img src="{{ URL::asset('/img/logo.png') }}" alt="DIRI Manuscript Project" width="350">
                         </a>
                     </h1>
                     
@@ -56,64 +58,92 @@
                 
             </div><!--//container-->
         </header><!--//header-->
+        <nav class="navbar navbar-expand-lg navbar-light style="background-color: ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('manuscripts.index')}}">Manuscript List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('manuscripts.showSearchForm') }}">Search</a>
+                  </li>
+                  @guest
+                      
+                  @else
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('voyager.login') }}">Admin Panel</a>
+                    <a class="dropdown-item" href="{{ route('manuscripts.create') }}">Create New Manuscript</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                    <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none;">
+                    @csrf
+                    </form>
+                  </div>
+                  @endguest
+                </li>
+              </ul>
+            </div>
+          </nav>
+
 
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"></i>@yield('heading')</h1>
                 </div><!--//doc-header-->
-                <div class="doc-body row">
-                    <div class="doc-content col-md-9 col-12 order-1">
+                <div class="doc-body row middlerow">
+                    <div class="doc-content col-md-12 col-12 order-1">
                         <div class="content-inner">
                             @yield('content')
                         </div>
                     </div>
-
-        
-
-                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
-                        <div id="doc-nav" class="doc-nav">
-                            
-                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-                                <a class="nav-link" href="#">About the Project</a>
-                                <a class="nav-link" href="{{ route('manuscripts.index') }}">Manuscripts</a>
-                                <a class="nav-link" href="{{ route('manuscripts.showSearchForm')}}">Search</a>
-                            @guest
-                                
-                            @else
-                            <a href="#" class="nav-link disabled">Admin</a>
-                            <nav class="doc-sub-menu nav flex-column">
-                                <a class="nav-link" href="{{ route('voyager.login') }}">Admin Panel</a>
-                                <a class="nav-link" href="{{ route('manuscripts.create') }}">Add New Manuscript</a>
-                                <a class="nav-link" href="{{route('logout') }}">Logout</a>
-                            </nav> 
-                            @endguest
-                            </nav><!--//doc-menu-->
-                            
-                        </div>
-                    </div><!--//doc-sidebar-->
                 </div>
             </div>
         </div>
 
-        <footer id="footer" class="footer">
+        <footer id="footer" class="footer w3-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
                         <p>Dhammachai International Research Institute</p>
-                        <p>399 George Street, Dunedin, New Zealand</p>
-                        <p><a href="info@diri.ac.nz">info@diri.ac.nz</a></p>
+                        <p>399 George Street</p>
+                        <p>Dunedin, New Zealand</p>
                         <p>(+64)22 560 0339</p>
+                        <p><a href="info@diri.ac.nz">info@diri.ac.nz</a></p>  
+                        <p><a href="http://diri.ac.nz" target="_blank">Main Website</a></p>
 
                     </div>
                     <div class="col-sm-5">
                         <p>Website designed by Spinning Cube Solutions</p>
                         <p>&copy; 2020 Dhammachai International Research Institute</p>
-                    </div>s
-                </div>
-                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+                    </div>
                 
+                    <div class="col-sm-2 loginout">
+                        @guest
+                            <a href="{{ route('login') }}">Login</a>
+                        @else
+                            <a href="{{ route('logout') }}">Logout</a>
+                        @endguest
+                    </div> 
+                </div>
+                
+
+                <div class="att">
+                    <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                    <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+                </div>
             </div><!--//container-->
         </footer><!--//footer-->
     

@@ -30,7 +30,7 @@ Route::post('/manuscripts/search_one', 'ManuscriptController@searchOne')->name('
 Route::resource('manuscripts', 'ManuscriptController');
 
 // Authentication
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

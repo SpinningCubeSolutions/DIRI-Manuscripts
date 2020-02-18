@@ -28,12 +28,12 @@ html, body {
 
 .page-wrapper:after {
   content: "";
-  display: block;
-  height: 50px;
+  display: 
+  height: auto;
 }
 
 .footer {
-  height: 50px;
+  height: auto;
 }
 
 p {
@@ -409,7 +409,27 @@ select {
 }
 
 .footer .fa-heart {
-  color: #EA5395;
+  color: #26282c;
+}
+
+.footer .att {
+  text-align: right;
+  font-size: xx-small;
+}
+
+.footer .loginout {
+  text-align: right;
+}
+
+.cf:before,
+.cf:after {
+  content:"";
+  display: table;
+  line-height: 0 !important;
+}
+
+.cf:after {
+  clear: both;
 }
 
 @media (max-width: 575.98px) {
@@ -814,7 +834,7 @@ select {
 
 /* Color Schemes */
 .body-green .header {
-  border-color: #75c181;
+  border-color: #FBBA28;
 }
 
 .body-green a {
