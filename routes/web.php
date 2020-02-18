@@ -15,8 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/about', function() {
     return view('about');
+});
+
+Route::get('/privacypolicy', function() {
+	return view('privacypolicy');
 });
 
 Route::get('/google-drive', function() {
@@ -42,7 +47,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 

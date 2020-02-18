@@ -28,8 +28,8 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '677441992784-b2gvbaf47dtktdp0aac32o3d4jchoui5.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyDezIoDM1HOcnE2HM6gTNtFH3oyEVVmmdo';
+      var CLIENT_ID = '412078386097-g9lvenu8uckm569927uh7d9qdpp4a77m.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyBVYTroJq4FTNAQaRxpLiQstzFxb0HLo30';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
