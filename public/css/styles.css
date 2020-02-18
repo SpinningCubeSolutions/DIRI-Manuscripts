@@ -85,8 +85,8 @@ code {
 }
 
 .btn-primary, a.btn-primary {
-  background: #40babd;
-  border: 1px solid #40babd;
+  background: #ffb606;
+  border: 1px solid #fceb01;
   color: #fff !important;
 }
 
@@ -97,8 +97,8 @@ code {
 }
 
 .btn-green, a.btn-green {
-  background: #75c181;
-  border: 1px solid #75c181;
+  background: #ffb606;
+  border: 1px solid #ffb606;
   color: #fff !important;
 }
 
@@ -117,15 +117,15 @@ code {
 }
 
 .btn-blue, a.btn-blue {
-  background: #58bbee;
-  border: 1px solid #58bbee;
+  background: #ffb606;
+  border: 1px solid #ffb606;
   color: #fff !important;
 }
 
 .btn-blue:hover, .btn-blue:focus, .btn-blue:active, .btn-blue.active, .btn-blue.hover, a.btn-blue:hover, a.btn-blue:focus, a.btn-blue:active, a.btn-blue.active, a.btn-blue.hover {
-  background: #41b2ec;
+  background: #fceb01;
   color: #fff !important;
-  border: 1px solid #41b2ec;
+  border: 1px solid #fceb01;
 }
 
 .btn-orange, a.btn-orange {
@@ -272,7 +272,7 @@ select {
 }
 
 .body-green .branding .text-highlight {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .body-blue .branding .text-highlight {
@@ -306,7 +306,7 @@ select {
 }
 
 .body-green .branding .icon {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .body-blue .branding .icon {
@@ -461,7 +461,7 @@ select {
 }
 
 .body-green .doc-header .doc-title {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .body-blue .doc-header .doc-title {
@@ -838,7 +838,7 @@ select {
 }
 
 .body-green a {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .body-green a:hover {
@@ -947,8 +947,8 @@ select {
 }
 
 .body-green .doc-menu .nav-link.active {
-  color: #75c181;
-  border-color: #75c181;
+  color: #ffb606;
+  border-color: #ffb606;
 }
 
 .body-blue .doc-menu .nav-link.active {
@@ -1011,7 +1011,7 @@ select {
 }
 
 .body-green .doc-sub-menu .nav-link.active {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .body-blue .doc-sub-menu .nav-link.active {
@@ -1378,7 +1378,7 @@ select {
 }
 
 .cards-section .item-green .item-inner {
-  border-top: 3px solid #75c181;
+  border-top: 3px solid #ffb606;
 }
 
 .cards-section .item-green .item-inner:hover .title {
@@ -1386,7 +1386,7 @@ select {
 }
 
 .cards-section .item-green .icon {
-  color: #75c181;
+  color: #ffb606;
 }
 
 .cards-section .item-blue .item-inner {
