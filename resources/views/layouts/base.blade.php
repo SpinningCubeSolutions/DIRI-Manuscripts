@@ -30,12 +30,12 @@
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
-            <div class="container">
+            <div class="container headerimg">
                 <div class="branding">
                     <h1 class="logo">
                         <a href="index.html">
                             {{-- <span aria-hidden="true" class="icon_documents_alt icon"></span> --}}
-                            <img src="{{ URL::asset('/img/logo.png') }}" alt="DIRI Manuscript Project" width="350">
+                            <img src="{{ URL::asset('/img/logo2.png') }}" alt="DIRI Manuscript Project" width="350">
                         </a>
                     </h1>
                     
@@ -59,7 +59,7 @@
             </div><!--//container-->
         </header><!--//header-->
         <nav class="navbar navbar-expand-lg navbar-light style="background-color: ">
-            <p class="navbar-brand" style="color: white;">..........<p>
+            <p class="navbar-brand" style="color: white;">....<p>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
