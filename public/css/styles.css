@@ -249,7 +249,7 @@ select {
 .header {
   background: #494d55;
   color: rgba(255, 255, 255, 0.85);
-  border-top: 5px solid #40babd;
+  border-top: 5px solid #ffb606;
   padding: 30px 0;
 }
 
@@ -1386,15 +1386,15 @@ select {
   color: #40babd;
 }
 
-.cards-section .item-green .item-inner {
+.cards-section .item-yellow .item-inner {
   border-top: 3px solid #ffb606;
 }
 
-.cards-section .item-green .item-inner:hover .title {
-  color: #48a156;
+.cards-section .item-yellow .item-inner:hover .title {
+  color: #edfd04;
 }
 
-.cards-section .item-green .icon {
+.cards-section .item-yellow .icon {
   color: #ffb606;
 }
 
