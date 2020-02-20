@@ -18,7 +18,10 @@
                 @guest
                     <a href="{{ route('login') }}">Login</a>
                 @else
-                    <a href="{{ route('logout') }}">Logout</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none;">
+                    @csrf
+                </form>
                 @endguest
             </div> 
         </div>
