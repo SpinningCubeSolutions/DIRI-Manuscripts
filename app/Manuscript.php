@@ -10,6 +10,7 @@ class Manuscript extends Model
         'physical_location',
         'classmark',
         'subject',
+        'subject_other_lang',
         'author',
         'place_of_origin',
         'date_of_creation',

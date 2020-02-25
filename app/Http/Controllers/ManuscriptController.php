@@ -76,6 +76,7 @@ class ManuscriptController extends Controller
             'physical_location' => $request->physical_location,
             'classmark' => $request->classmark,
             'subject' => $request->subject,
+            'subject_other_lang' => $request->subject_other_lang,
             'author' => $request->author,
             'place_of_origin' => $request->place_of_origin,
             'date_of_creation'=>$request->date_of_creation,
@@ -137,6 +138,7 @@ class ManuscriptController extends Controller
         $manuscript->physical_location = $request->physical_location;
         $manuscript->classmark = $request->classmark;
         $manuscript->subject = $request->subject;
+        $manuscript->subject_other_lang = $request->subject_other_lang;
         $manuscript->author = $request->author;
         $manuscript->place_of_origin = $request->place_of_origin;
         $manuscript->date_of_creation = $request->date_of_creation;
@@ -176,6 +178,7 @@ class ManuscriptController extends Controller
         $po_res = Manuscript::where('place_of_origin', 'LIKE','%'.$param.'%')->get();
         $doc_res = Manuscript::where('date_of_creation', 'LIKE','%'.$param.'%')->get();
         $sub_res = Manuscript::where('subject', 'LIKE','%'.$param.'%')->get();
+        $subol_res = Manuscript::where('subject_other_lang', 'LIKE','%'.$param.'%')->get();
         $aut_res = Manuscript::where('author', 'LIKE','%'.$param.'%')->get();
         $aspn_res = Manuscript::where('associated_persons', 'LIKE','%'.$param.'%')->get();
         $pd_res = Manuscript::where('physical_description', 'LIKE','%'.$param.'%')->get();
@@ -187,6 +190,7 @@ class ManuscriptController extends Controller
                                 ->merge($po_res)
                                 ->merge($doc_res)
                                 ->merge($sub_res)
+                                ->merge($subol_res)
                                 ->merge($aut_res)
                                 ->merge($aspn_res)
                                 ->merge($pd_res)
@@ -205,7 +209,7 @@ class ManuscriptController extends Controller
         return view('manuscripts.searchresults', ['manuscripts' => $searchResults, 'searchTerm' => $param]);
     }
 
-    public function dumpAndDie(Request $request) {
-        dd($request);
-    }
+    // public function dumpAndDie(Request $request) {
+    //     dd($request);
+    // }
 }

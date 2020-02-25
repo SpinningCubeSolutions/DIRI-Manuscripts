@@ -28,6 +28,17 @@
     </div>
 </div>
 
+    
+{{-- Subject (other language) --}}
+<div class="form-group row">
+    
+    <div class="form-label col-sm-2"><br>Subject(s) (Other language)</div>  
+    
+    <div class="col-sm-8 form-field">
+        <input class="form-control input-field" type="text" name="subject_other_lang" id="subject_other_lang" value="{{ old('subject_other_lang', $manuscript->subject_other_lang ?? null) }}" placeholder="Subject(s) (Other language)" />
+    </div>
+</div>
+
 {{-- Author(s) --}}
 <div class="form-group row">
     <div class="col-sm-2 form-label"><br>Author(s)</div>  

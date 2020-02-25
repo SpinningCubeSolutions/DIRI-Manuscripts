@@ -28,6 +28,7 @@
                                     <p><strong>Physical Location:</strong> {{ $manuscript->physical_location }}</p>
                                     <p><strong>Classmark:</strong> {{ $manuscript->classmark }}</p>
                                     <p><strong>Subject(s):</strong> {{ $manuscript->subject }}</p>
+                                    <p><strong>Subject(s) (Other language):</strong> {{ $manuscript->subject_other_lang }}</p>
                                     <p><strong>Author(s):</strong> {{ $manuscript->author }}</p>
                                     <p><strong>Place of Origin:</strong> {{ $manuscript->place_of_origin }}</p>
                                     <p><strong>Date of Creation:</strong> {{ $manuscript->date_of_creation }}</p>

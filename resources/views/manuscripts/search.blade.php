@@ -41,6 +41,7 @@
                 <option value="classmark">Classmark</option>
                 <option value="place_of_origin">Place of Origin</option>
                 <option value="subject">Subject(s)</option>
+                <option value="subject_other_lang">Subject(s) (Other language)</option>
                 <option value="author">Author(s)</option>
                 <option value="date_of_creation">Date of Creation</option>
                 <option value="associated_persons">Associated Person(s)</option>
