@@ -13,7 +13,7 @@
             <div class="container headerimg">
                 <div class="branding">
                     <h1 class="logo">
-                        <a href="index.html">
+                        <a href="/">
                             {{-- <span aria-hidden="true" class="icon_documents_alt icon"></span> --}}
                             <img src="{{ URL::asset('/img/logo2.png') }}" alt="DIRI Manuscript Project" width="350">
                         </a>
