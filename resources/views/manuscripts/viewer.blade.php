@@ -76,8 +76,8 @@
           ],
       
           // Book title and the URL used for the book title link
-          bookTitle: 'Manuscript from {{ $manuscript->place_of_origin }}',
-          bookUrl: '',
+          bookTitle: 'DIRI Manuscript Project',
+          bookUrl: '/',
           bookUrlText: '',
           bookUrlTitle: '',
       
