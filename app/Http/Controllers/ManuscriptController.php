@@ -47,7 +47,6 @@ class ManuscriptController extends Controller
      */
     public function index()
     {
-        print('Big purrs');
         $manuscripts = Manuscript::all();
         return view('manuscripts.index', ['manuscripts' => $manuscripts]);
     }
