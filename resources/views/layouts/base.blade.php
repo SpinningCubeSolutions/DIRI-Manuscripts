@@ -47,6 +47,13 @@
                 <div class="doc-body row middlerow">
                     <div class="doc-content col-md-12 col-12 order-1">
                         <div class="content-inner">
+                            @if (Session::has('flash_notification.message'))
+                            <div class="alert alert-{{ Session::get('flash_notification.level') }}">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{ Session::get('flash_notification.message')}}
+                            </div>
+                            @endif
+                            
                             @yield('content')
                         </div>
                     </div>

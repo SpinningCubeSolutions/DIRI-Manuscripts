@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Collection;
+use App\Controllers\Debugbar;
 
 
 
@@ -46,6 +47,7 @@ class ManuscriptController extends Controller
      */
     public function index()
     {
+        print('Big purrs');
         $manuscripts = Manuscript::all();
         return view('manuscripts.index', ['manuscripts' => $manuscripts]);
     }
@@ -67,8 +69,27 @@ class ManuscriptController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+        
+        $validatedData = $request->validate([
+            'physical_location' => 'required',
+            'classmark' => 'required',
+            'subject' => 'required',
+            'subject_other_lang' => 'required',
+            'author' => 'required',
+            'place_of_origin'  => 'required',
+            'date_of_creation' => 'required',
+            'associated_persons'  => 'required',
+            'physical_description' => 'required',
+            'material' => 'required',
+            'format' => 'required',
+            'binding' => 'required',
+            'images' => 'required',
+            'preview_image' => 'required',
+        ]);
+
+        \Debugbar::addMessage($request, 'POST request');
+
         $users = DB::table('users')->get();
         $user = $users[0];
         $formattedImageString = $this->formatImageString($request->images);
@@ -89,6 +110,7 @@ class ManuscriptController extends Controller
             'preview_image' => $request->preview_image,
             'user_id' => Auth::id(),
         ]);
+        print('Big purrs');
         $manuscriptImages = $this->createImageArray($formattedImageString);
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
 
@@ -101,7 +123,7 @@ class ManuscriptController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Manuscript $manuscript)
-    {
+    { 
         $manuscriptImages = $this->createImageArray($manuscript->images);
         return view('manuscripts.show', ['manuscript' => $manuscript, 'manuscriptImages' => $manuscriptImages]);
     }
